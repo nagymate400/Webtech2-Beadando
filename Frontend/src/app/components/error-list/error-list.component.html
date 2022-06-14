@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="errorList" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="sensorName">
+      <th mat-header-cell *matHeaderCellDef> Sensor's name </th>
+      <td mat-cell *matCellDef="let element"> {{element.sensorName}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="placeOfSensor">
+      <th mat-header-cell *matHeaderCellDef> Place of measurment </th>
+      <td mat-cell *matCellDef="let element"> {{element.placeOfSensor}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="timeOfMeasurement">
+      <th mat-header-cell *matHeaderCellDef> Date of measurment </th>
+      <td mat-cell *matCellDef="let element"> {{element.timeOfMeasurement}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> Recorded value </th>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="unit">
+        <th mat-header-cell *matHeaderCellDef> Unit of measurment </th>
+        <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

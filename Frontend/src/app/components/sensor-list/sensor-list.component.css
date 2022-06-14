@@ -1,0 +1,25 @@
+.place-active{
+    margin: 1rem;
+    background-color:#c2185b
+  }
+  
+  .place-inactive{
+    margin: 1rem;
+    background-color:#424242
+  }
+  
+  .formated-card{
+    max-width: 400px;
+    float: left;
+  }
+
+  .active-button{
+    background-color: #424242
+  }
+  .inactive-button{
+    background-color:#c2185b
+  }
+
+  .cards{
+      margin: 2%;
+  }

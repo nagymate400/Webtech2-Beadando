@@ -1,0 +1,22 @@
+<mat-card class="error">
+    <form [formGroup]="form" (submit)="saveBoundaries()">
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          formControlName="min"
+          placeholder="Enter minimum value"
+        />
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input
+          matInput
+          type="number"
+          formControlName="max"
+          placeholder="Enter maximum value"
+        />
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" class="save_button">Save boundaries</button>
+    </form>
+  </mat-card>

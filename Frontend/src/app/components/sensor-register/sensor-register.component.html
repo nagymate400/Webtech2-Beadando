@@ -1,0 +1,51 @@
+<mat-card>
+    <form [formGroup]="form" (submit)="saveNewSensor()">
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="name"
+          placeholder="Place sensor's name"
+        />
+        <mat-error *ngIf="form.get('name').invalid"
+          >Please enter the place name (minimum 3, maximum 50
+          character)</mat-error
+        >
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="placeOfMeasurment"
+          placeholder="Enter the place of measurment"
+        />
+        <mat-error *ngIf="form.get('placeOfMeasurment').invalid"
+          >Please enter a valid place</mat-error
+        >
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          formControlName="unit"
+          placeholder="Enter the measure unit"
+        />
+        <mat-error *ngIf="form.get('unit').invalid"
+          >Please enter a valid unit</mat-error
+        >
+      </mat-form-field>
+  
+      <mat-form-field>
+        <mat-label>Place active</mat-label>
+        <mat-select formControlName="active" required>
+          <mat-option [value]="false">Active</mat-option>
+          <mat-option [value]="false">Inactive</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Register sensor</button>
+    </form>
+  </mat-card>
+  

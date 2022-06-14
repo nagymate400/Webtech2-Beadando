@@ -1,0 +1,29 @@
+
+<app-error-settings></app-error-settings>
+<div class="cards">
+<div *ngFor="let element of sensorList">
+    <mat-card
+      [ngClass]="
+        element.active
+          ? 'place-active formated-card'
+          : 'place-inactive formated-card'
+      "
+    >
+      <mat-card-title>{{ element.name }}</mat-card-title>
+      <mat-card-content>
+        <p><strong>Place of Measurment:</strong> {{ element.placeOfMeasurment }}</p>
+        <p><strong>Unit:</strong> {{ element.unit }}</p>
+      </mat-card-content>
+        <p>
+          Set the place status: 
+          <button
+            (click)="onActiveStatusChange(element)"
+            mat-raised-button
+            [class]="element.active ? 'active-button' : 'inactive-button'"
+          >
+            {{ element.active ? "Active" : "Inactive" }}
+          </button>
+        </p>
+    </mat-card>
+  </div>
+</div>
